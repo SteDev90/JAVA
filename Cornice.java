@@ -1,0 +1,1 @@
+public class Cornice {	private int numeroRighe;	private String frase;		public Cornice (int nuneroRighe, String frase) {		this.numero = nunero;		this.frase = frase;	}		public String toString ( ) {				}}
