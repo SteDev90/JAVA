@@ -1,2 +1,2 @@
 # JAVA
-Repository for Java programming
+Repository for Java programming course
