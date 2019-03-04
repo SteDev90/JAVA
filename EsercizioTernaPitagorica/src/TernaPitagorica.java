@@ -25,32 +25,24 @@ public class TernaPitagorica {
 	
 	public static void calcolaTerna (int n) {
 		
-		double c = 0;
-		double m = 2;
+		double aQuadro = 0;
+		double bQuadro = 0;
+		double cQuadro = 0;
 		
-		while (c <= n) {
-			
-			double b = (Math.pow(m, 2) - 1) / 2;
-			double a = m;
-			c = (Math.pow(m, 2) + 1) / 2;
-			
-			double aQuadro = Math.pow(a, 2);
-			double bQuadro = Math.pow(b, 2);
-			double cQuadro = Math.pow(c, 2);
-			
-			if (aQuadro + bQuadro == cQuadro && c<=n) {
-				System.out.println("La terna pitagorica vale:");
-				System.out.println("a = " + a);
-				System.out.println("b = " + b);
-				System.out.println("c = " + c);
-				System.out.println("m = " + m);
-				System.out.println();
-				m ++;
-			} else {
-				m ++;
+		for (double a = 1; a <= n; a++) {
+			for (double b = a; b <= n; b++) {
+				for (double c = b; c <= n; c++) {
+					aQuadro = Math.pow(a, 2);
+					bQuadro = Math.pow(b, 2);
+					cQuadro = Math.pow(c, 2);
+					if (aQuadro + bQuadro == cQuadro) {
+						System.out.println("La terna vale rispettivamente");
+						System.out.println("a: " + a);
+						System.out.println("b: " + b);
+						System.out.println("c: " + c);
+					}
+				}
 			}
-			
-			
 		}
 		
 		
