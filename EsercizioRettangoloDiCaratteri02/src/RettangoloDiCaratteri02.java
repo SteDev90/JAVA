@@ -115,9 +115,6 @@ public class RettangoloDiCaratteri02 {
 		
 		System.out.println("Sono stati usati i seguenti due caratteri: ");
 		rettangolo.getCaratteri();
-		
-		
-
 	}
 
 }
