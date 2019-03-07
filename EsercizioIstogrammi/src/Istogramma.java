@@ -9,11 +9,9 @@
  */
 public class Istogramma {
 	private final int NumeroVoti = 32;
-	private final int maxNumeroVoti = 10;
-	private final char carattereVoto = 'X';
+	private static int maxNumeroVoti = 10;
+	private final char carattereVoto = '1';
 	private int[][] istogrammaVoti;
-	
-	
 	
 	public Istogramma () {
 		this.istogrammaVoti = new int[NumeroVoti][maxNumeroVoti];
@@ -27,17 +25,22 @@ public class Istogramma {
 					istogrammaVoti[i][j] = 1;
 					inserire = false;
 				}
-				System.out.println(i + " " + j + " " + istogrammaVoti[i][j]);
+				//System.out.println(i + " " + j + " " + istogrammaVoti[i][j]);
 			}
 		}
 	}
 	
 	public void stampaIstogramma () {
 		for (int i=0; i<NumeroVoti; i++) {
+			if(i<10) {
+				System.out.print(i + ") ");
+			} else {
+				System.out.print(i + ")");
+			}
 			for (int j=0; j<maxNumeroVoti; j++) {
 				if (istogrammaVoti[i][j] == 1) {
-					System.out.print(carattereVoto);	// Stampo il carattere che rappresenta 1 voto per quel voto
-				} else System.out.print("-");
+					System.out.print(carattereVoto + " ");	// Stampo il carattere che rappresenta 1 voto per quel voto
+				} else System.out.print("- ");
 			} 
 			System.out.println();
 		}
