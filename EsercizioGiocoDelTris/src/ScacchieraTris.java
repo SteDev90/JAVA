@@ -8,6 +8,7 @@
  * Progettare quindi una classe Tris che implementi il gioco utilizzando la scacchiera appena progettata.
  * 
  * @author anacletostefanopili
+ * 
  *
  */
 public class ScacchieraTris {
@@ -45,16 +46,22 @@ public class ScacchieraTris {
 		for(int i=0; i<ALTEZZA_MAX; i++) {
 			for (int j=0; j<LUNGHEZZA_MAX; j++) {
 				System.out.print(scacchiera[i][j]);
+				System.out.print(i);
+				System.out.print(j + " ");
 			}
 			System.out.println();
 		}
-		System.out.println();
+		System.out.println(" ");
 	}
 	
 	public boolean casellaVuota (int x, int y) {
 		if (scacchiera[y][x] == CASELLA_VUOTA) {
 			return true;
-		} else return false;
+		} else {
+			System.out.println("La casella è gia occupata!!");
+			System.out.println();
+			return false;
+		}
 	}
 	
 	public int casellaGiocatore (int x, int y) {
@@ -93,15 +100,15 @@ public class ScacchieraTris {
 		} else return TURNO_G2;
 	}
 	
-	public boolean cellaGiocabile (int x, int y) {
+	/*public boolean cellaGiocabile (int x, int y) {
 		if(casellaVuota(x,y) && ((casellaGiocatore(x,y) != GIOCATORE1) && (casellaGiocatore(x,y) != GIOCATORE2))) {
 			return true;
 	 	} 
 		return false;
 	}
-	
+	*/
 	public void inserisciSimbolo (int x, int y, int turno) {
-		if (giocatoreInTurno (turno) == TURNO_G1 && cellaGiocabile(x, y)) {
+		if (giocatoreInTurno (turno) == TURNO_G1 && casellaVuota(x, y)) {
 			scacchiera[x][y] = GIOCATORE1;
 		} else scacchiera[x][y] = GIOCATORE2;
 	}

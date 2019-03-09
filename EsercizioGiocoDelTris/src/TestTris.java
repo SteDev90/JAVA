@@ -24,35 +24,40 @@ public class TestTris {
 		do {
 			nuovaScacchiera.stampaScacchiera();		// Stampo la scacchiera ad ogni turno 
 			// Finche il giocatore non inserisce delle coordinate valide le richiedo
+			
 			do {
 				if (nuovaScacchiera.giocatoreInTurno(turno) == ScacchieraTris.TURNO_G1) {
 					System.out.println("Giocatore 1 inserisci le coordinate...");
+					System.out.println("Siamo al turno di gioco numero: " + turno);
 					System.out.print("Coordinata X: ");
 					x = inserisciCoordinate.nextInt();
 					System.out.print("Coordinata Y: ");
 					y = inserisciCoordinate.nextInt();
 				} else {
 					System.out.println("Giocatore 2 inserisci le coordinata: ");
+					System.out.println("Siamo al turno di gioco numero: " + turno);
 					System.out.print("Coordinata X: ");
 					x = inserisciCoordinate.nextInt();
 					System.out.print("Coordinata Y: ");
 					y = inserisciCoordinate.nextInt();
 				}
-			}while(!nuovaScacchiera.coordinateValide(x, y));
+			}while((nuovaScacchiera.coordinateValide(x, y)) && !(nuovaScacchiera.casellaVuota(x, y)));
 			
 			// Controllo se la cella è giocabile: è vuota e senza simboli
-			if(nuovaScacchiera.cellaGiocabile(y, x)) {
+			if(nuovaScacchiera.casellaVuota(x, y)) {
 				nuovaScacchiera.inserisciSimbolo(y, x, turno);	// Inserisco il simbolo del giocatore in gioco
 				if (turno >= Tris.TURNI_CHECK) {
-					if (nuovaScacchiera.vittoriaGiocatore(x, y) && nuovaScacchiera.giocatoreInTurno(turno) == ScacchieraTris.TURNO_G1) {
-						System.out.println("Giocatore 1 HAI VINTO");
-						nuovaScacchiera.stampaScacchiera();
-						break;
-					}
-					if (nuovaScacchiera.vittoriaGiocatore(x, y) && nuovaScacchiera.giocatoreInTurno(turno) == ScacchieraTris.TURNO_G2) {
-						System.out.println("Giocatore 2 HAI VINTO"); 
-						nuovaScacchiera.stampaScacchiera();
-						break;
+					if (nuovaScacchiera.vittoriaGiocatore(x, y)) {
+						if(nuovaScacchiera.giocatoreInTurno(turno) == ScacchieraTris.TURNO_G1) {
+							System.out.println("Giocatore 1 HAI VINTO");
+							nuovaScacchiera.stampaScacchiera();
+							break;
+						}
+						if (nuovaScacchiera.giocatoreInTurno(turno) == ScacchieraTris.TURNO_G2) {
+							System.out.println("Giocatore 2 HAI VINTO"); 
+							nuovaScacchiera.stampaScacchiera();
+							break;
+						}
 					}
 				}
 			} 
@@ -60,7 +65,7 @@ public class TestTris {
 			nuovaScacchiera.stampaScacchiera();
 			
 			turno ++;	// Vado al turno successivo
-		} while (turno < Tris.NUMERO_TURNI_MAX);
+		} while (turno <= Tris.NUMERO_TURNI_MAX);
 		
 
 	}
