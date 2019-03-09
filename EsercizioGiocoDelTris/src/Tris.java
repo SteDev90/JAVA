@@ -12,20 +12,18 @@
  */
 
 public class Tris {
-	private ScacchieraTris tris;
-	private final int NUMERO_TURNI_MAX = ScacchieraTris.ALTEZZA_MAX * ScacchieraTris.LUNGHEZZA_MAX;		// Se la scacchiera è 3 x 3
-	private final int NUMERO_TURNI_MIN = 6;
+	//private ScacchieraTris tris;
+	public static final int NUMERO_TURNI_MAX = ScacchieraTris.ALTEZZA_MAX * ScacchieraTris.LUNGHEZZA_MAX;		// Se la scacchiera è 3 x 3
+	public static final int TURNI_CHECK = 5;
 	
 	public Tris () {
-		this.tris = new ScacchieraTris(); 
+		//this.tris = new ScacchieraTris(); 
 	}
 	
 	public void inserisciCoordinate(int x, int y) {
 		for(int i=0; i<ScacchieraTris.ALTEZZA_MAX; i++) {
 			for (int j=0; j<ScacchieraTris.LUNGHEZZA_MAX; j++) {
-				if(x==j && y==i) {
-					
-				}
+				
 			}
 		}
 	}
