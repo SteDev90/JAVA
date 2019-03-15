@@ -1,5 +1,3 @@
-import org.omg.PortableServer.THREAD_POLICY_ID;
-
 /**
  * Progettare una classe ScacchieraTris che implementi la scacchiera del gioco del tris
  * la classe deve memorizzare la scacchiera i cui elementi possono essere:
