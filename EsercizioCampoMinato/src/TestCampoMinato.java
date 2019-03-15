@@ -8,7 +8,7 @@ import java.util.Random;
  * - -1 se la casella contiene una mina
  * - La quantità di caselle adiacenti contenenti mine (incluse quelle in diagonale)
  * - 0 se le caselle adiacenti non contengono mine. 
- *   In quest'ultimo caso vengono scoperte anche le caselle adiacenti finchè non si incontra un numero > 0 (ricordiosne)
+ *   In quest'ultimo caso vengono scoperte anche le caselle adiacenti finchè non si incontra un numero > 0 (ricorsione)
  *   Implementare un metodo toString() che restituisce la situazione attuale del gioco
  *   Implementare un metodo vinto ( ) che restituisce lo stato del gioco: vento, vinto, in gioco.
  */
@@ -16,6 +16,12 @@ import java.util.Random;
 public class TestCampoMinato {
 
 	public static void main(String[] args) {
+		int N = 0;
+		int M = 0;
+		int m = 0;
+		int x = 0;
+		int y = 0;
+		
 		CampoMinato newGame = new CampoMinato(10, 10, 50);
 		newGame.generaMine();
 		newGame.stampaCampopMinato();
